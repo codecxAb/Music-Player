@@ -1,0 +1,18 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "🎶  A simple Music player with javascript basic knowledge.  🎧 Your soundtrack, your style – play on! 🎵\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.11"
+  }
+}

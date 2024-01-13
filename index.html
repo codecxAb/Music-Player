@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body
+    class="flex justify-center bg-black text-stone-50 items-center min-h-screen"
+  >
+    <div
+      class="container bg-slate-800 p-8 space-y-4 rounded-xl max-w-md flex flex-col justify-center items-center"
+    >
+      <div class="txt text-center">
+        <small>Now Playing</small>
+        <h1 id="title"></h1>
+        <small id="artist">̀</small>
+      </div>
+      <img
+        class="size-60 object-cover shadow-lg" id="thumbnail"
+        src="https://images.unsplash.com/photo-1671004658448-b5401fc40130?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="coverImage"
+      />
+      <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+        <div id="progress" class="h-1 bg-green-500"></div>
+        <div class="time w-full flex justify-between">
+          <small id="currentTime">0:00</small>
+          <small id="totalTime" >0:00</small>
+        </div>
+      </div>
+      <div class="icons flex gap-10">
+        <svg id="repeat" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" /><path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" /></svg>
+        <svg 
+        id="previous"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-player-track-prev"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M21 5v14l-8 -7z" />
+          <path d="M10 5v14l-8 -7z" />
+        </svg>
+        <svg
+        id="play"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-player-play"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 4v16l13 -8z" />
+        </svg>
+        <svg
+        id="next"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-player-track-next"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 5v14l8 -7z" />
+          <path d="M14 5v14l8 -7z" />
+        </svg>
+        <svg id="suffle" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-shuffle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3" /><path d="M18 20l3 -3l-3 -3" /><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h5" /><path d="M21 7h-5a4.978 4.978 0 0 0 -3 1m-4 8a4.984 4.984 0 0 1 -3 1h-3" /></svg>
+      </div>
+      <!-- <div class="songs flex flex-col gap-3 pt-5">
+        <audio controls src="Songs/Song1.mp3"></audio>
+        <audio controls src="Songs/Song2.mp3"></audio>
+        <audio controls src="Songs/Song3.mp3"></audio>
+        <audio controls src="Songs/Song4.mp3"></audio>
+        <audio controls src="Songs/Song5.mp3"></audio>
+        <audio controls src="Songs/Song6.mp3"></audio>
+        <audio controls src="Songs/Song7.mp3"></audio>
+        <audio controls src="Songs/Song8.mp3"></audio>
+        <audio controls src="Songs/Song9.mp3"></audio>
+        <audio controls src="Songs/Song10.mp3"></audio>
+      </div>
+    </div> -->
+    <div id="playlist" class="song w-full">
+      <!-- <button id="songBtn" class="flex items-center justify-between my-4 w-full">
+        <svg id="play" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor" /></svg>
+        <h1 id="title">Song titile</h1>
+        <small id="totalTime" >10:50</small>
+      </button>
+      <button id="songBtn" class="flex items-center justify-between my-4 w-full">
+        <svg id="play" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor" /></svg>
+        <h1 id="title">Song titile</h1>
+        <small id="totalTime" >10:50</small>
+      </button>
+      <button id="songBtn" class="flex items-center justify-between my-4 w-full">
+        <svg id="play" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor" /></svg>
+        <h1 id="title">Song titile</h1>
+        <small id="totalTime" >10:50</small>
+      </button>
+       -->
+    </div> 
+    <script src="app.js"></script>
+  </body>
+</html>

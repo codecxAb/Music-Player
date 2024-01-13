@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#progress {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50; /* Green color, you can adjust this */
+    transition: width 0.3s ease; /* Add a smooth transition effect */
+}
